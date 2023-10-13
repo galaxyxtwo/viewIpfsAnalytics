@@ -53,13 +53,14 @@ function App() {
     }
 };
 
+// Add navbar text <span> if needed
   return (
     <div className="App">
       <nav className="App-navbar">
-          <span>My NFT collection</span>
+          <span></span> 
       </nav>
-      <h1>Leaderboard</h1>
-      <h2>The most popular NFTs</h2>
+      <h1>View IPFS Analytics</h1>
+      <h2>Add IPFS CIDs below and see how many times they were viewed!</h2>
 
       <div className="cid-input-section">  {/* 2. Add a text input and a button */}
         <input 

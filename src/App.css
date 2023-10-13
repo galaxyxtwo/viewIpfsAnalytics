@@ -45,7 +45,7 @@
 .App-navbar {
   background-color: #333;  /* Dark gray */
   color: white;            /* Text color for the navbar */
-  padding: 10px 20px;      /* Padding around navbar content */
+  padding: 20px 20px;      /* Padding around navbar content */
   text-align: center;      /* Center navbar content horizontally */
   width: 100%;             /* Make the navbar span the full width of its container */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Optional: Adds a subtle shadow below the navbar */
@@ -67,7 +67,11 @@ h1 {
 .leaderboard-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 0 auto;
+  margin-top: 40px;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+  
 }
 
 /* Color for links in table */
