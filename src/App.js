@@ -60,7 +60,7 @@ function App() {
           <span></span> 
       </nav>
       <h1>View IPFS Analytics</h1>
-      <h2>The number of times a cid has been viewed through Leto Analytics</h2>
+      <h2>Total views per IPFS cid</h2>
 
       <div className="cid-input-section">  {/* 2. Add a text input and a button */}
         <input 
