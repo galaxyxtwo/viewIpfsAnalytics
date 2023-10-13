@@ -1,0 +1,133 @@
+.App {
+  text-align: center;
+}
+
+.App ul {
+  list-style-type: none;
+}
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.App-navbar {
+  background-color: #333;  /* Dark gray */
+  color: white;            /* Text color for the navbar */
+  padding: 10px 20px;      /* Padding around navbar content */
+  text-align: center;      /* Center navbar content horizontally */
+  width: 100%;             /* Make the navbar span the full width of its container */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Optional: Adds a subtle shadow below the navbar */
+}
+
+ /*background color for application*/
+body {
+  background-color: #181a1b; /* or any other desired color */
+  color: #ffffff; 
+}
+
+
+/* Table styles */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+/* Color for links in table */
+.leaderboard-table a, 
+.leaderboard-table a:visited {
+    color: white;
+    text-decoration: none;  
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  border: 1px solid #5f5d5d;
+  padding: 8px 12px;
+}
+
+.leaderboard-table th {
+  background-color: #181a1b;
+  text-align: left;
+}
+
+.leaderboard-table tbody tr:nth-child(odd) {
+  background-color: #313030;
+}
+
+.leaderboard-table tbody tr:hover {
+  background-color: #333536;
+}
+
+.leaderboard-table .cid-column {
+  text-align: left;
+}
+
+span:hover {
+  cursor: pointer;
+
+}
+
+span a {
+  color: #901cde;  /* Example color: a medium shade of blue */
+  text-decoration: none; /* Remove the underline */
+}
+
+span a:hover {
+  color: #9b42d7; /* Slightly darker blue for hover effect */
+  text-decoration: underline; /* Add underline on hover for a hint of interactivity */
+}
+
+h2 {
+  color: #666;               /* Example color: a medium gray */
+  font-size: 1.11rem;         /* Adjust size as needed */
+  font-weight: normal;       /* Less bold than the main heading */
+  margin-top: .22rem;        /* Space between the main heading and subheading */
+  margin-bottom: 2.5rem;       /* Space between the  subheading and table */
+  text-align: center;        /* Center align if desired */
+}
+
+
+
+
+
+
+
+
