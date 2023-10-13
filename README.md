@@ -2,7 +2,7 @@
 
 An interface to display analytics for IPFS content by querying the [Leto Analytics api](https://letodev.gitbook.io/getting-started/documentation/analytics-rest-api). No login required.
 
-viewIpfsAnalytics is a public facing tool for communities using [Leto Analytics](https://leto.gg/) on websites, apps, and NFTs. If Leto is used in your system, the analytics (for each CID) can be accessed with viewIpfsAnalytics.
+viewIpfsAnalytics is a public facing tool for communities using [Leto Analytics](https://leto.gg/) (on websites, apps, NFTs, and more). If Leto is used in your system, the analytics (for each CID) can be accessed with viewIpfsAnalytics.
 
 <img width="1398" alt="Screenshot 2023-10-13 at 3 52 25 PM" src="https://github.com/galaxyxtwo/viewIpfsAnalytics/assets/90220293/acf81291-de24-4c1b-a974-e1e725747ba7">
 
