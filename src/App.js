@@ -60,7 +60,7 @@ function App() {
           <span></span> 
       </nav>
       <h1>View IPFS Analytics</h1>
-      <h2>Add IPFS CIDs below and see how many times they were viewed!</h2>
+      <h2>The number of times a cid has been viewed through Leto Analytics</h2>
 
       <div className="cid-input-section">  {/* 2. Add a text input and a button */}
         <input 
@@ -69,13 +69,13 @@ function App() {
           onChange={e => setCidInput(e.target.value)} 
           placeholder="Enter CID to query..."
         />
-        <button onClick={handleAddCid}>Add to Leaderboard</button>
+        <button onClick={handleAddCid}>Add</button>
       </div>
 
       <table className="leaderboard-table">
         <thead>
           <tr>
-            <th>NFT CID</th>
+            <th>IPFS CID</th>
             <th>Total Views</th>
           </tr>
         </thead>
