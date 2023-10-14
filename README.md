@@ -4,7 +4,7 @@ An interface to display analytics for IPFS content by querying the [Leto Analyti
 
 This is a public facing tool for communities using [Leto Analytics](https://leto.gg/) (on websites, apps, NFTs, and more). If Leto is used in your system, analytics for each CID can be accessed with this application. End-users have the opportunity to view the analytics for their IPFS content!
 
-<img width="1171" alt="Screenshot 2023-10-13 at 5 19 42 PM" src="https://github.com/galaxyxtwo/viewIpfsAnalytics/assets/90220293/cf791091-41b6-4413-9342-6e05e14b46f8">
+<img width="1215" alt="Screenshot 2023-10-13 at 7 27 36 PM" src="https://github.com/galaxyxtwo/viewIpfsAnalytics/assets/90220293/7d256442-d07c-4086-a78b-d4a79c149b9e">
 
 ## Background on viewIpfsAnalytics and Leto Analytics
 
