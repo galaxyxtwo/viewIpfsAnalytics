@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/analytics', {
+        const response = await fetch('analytics', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
