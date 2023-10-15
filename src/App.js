@@ -3,13 +3,14 @@ import './App.css';
 
 function App() {
   const [data, setData] = useState({ items: [], error: null });
-  const [cidInput, setCidInput] = useState('');  // State to handle the input CID
-  const [cids, setCids] = useState([]);
-
+  const [cidInput, setCidInput] = useState('');  // 1. State to handle the input CID
+  const initialCidsFromLocalStorage = JSON.parse(localStorage.getItem('savedCids')) || [];
+  const [cids, setCids] = useState(initialCidsFromLocalStorage);
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://api.leto.gg/analytics', { // Use the absolute URL
+        const response = await fetch('/analytics', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -28,9 +29,9 @@ function App() {
         const fetchedData = await response.json();
         console.log("API Response:", fetchedData);  // Log the API response
         if (fetchedData.success && fetchedData.data && Array.isArray(fetchedData.data.data)) {
-          setData({ items: fetchedData.data.data, error: null });
+            setData({ items: fetchedData.data.data, error: null });
         } else {
-          throw new Error("Invalid data format from the server.");
+            throw new Error("Invalid data format from the server.");
         }
         
       } catch (error) {
@@ -44,29 +45,32 @@ function App() {
   const handleAddCid = () => {
     if (cidInput) {
       setCids(prevCids => {
-        const newCids = [...prevCids, cidInput.trim()];
+        const newCids = [...prevCids, cidInput.trim()];  
+        localStorage.setItem('savedCids', JSON.stringify(newCids));  // Save to local storage
         return newCids;
       });
       setCidInput('');
     }
-  };
+    };
+    console.log("cid added", handleAddCid);  // Log the API response
+const handleDeleteCid = (cidToDelete) => {
+  setCids(prevCids => {
+    const newCids = prevCids.filter(cid => cid !== cidToDelete);
+    localStorage.setItem('savedCids', JSON.stringify(newCids));  // Update local storage
+    return newCids;
+  });
+};
 
-  const handleDeleteCid = (cidToDelete) => {
-    setCids(prevCids => {
-      const newCids = prevCids.filter(cid => cid !== cidToDelete);
-      return newCids;
-    });
-  };
-
+// Add navbar text <span> if needed
   return (
     <div className="App">
       <nav className="App-navbar">
-        <span></span> 
+          <span></span> 
       </nav>
       <h1>View IPFS Analytics</h1>
       <h2>Total views per IPFS cid</h2>
 
-      <div className="cid-input-section">
+      <div className="cid-input-section">  {/* Add a text input and a button */}
         <input 
           type="text" 
           value={cidInput} 
@@ -81,12 +85,12 @@ function App() {
           <tr>
             <th>IPFS CID</th>
             <th>Total Views</th>
-            <th>Action</th>
+            <th>Action</th> {/* Added this column header */}
           </tr>
         </thead>
         <tbody>
           {
-            data.items.sort((a, b) => b.numbersAccessed - a.numbersAccessed)
+            [...data.items].sort((a, b) => b.numbersAccessed - a.numbersAccessed)
             .map((item, index) => (
               <tr key={index}>
                 <td className="cid-column">
@@ -96,7 +100,7 @@ function App() {
                 </td>
                 <td>{item.numbersAccessed}</td>
                 <td>
-                  <button onClick={() => handleDeleteCid(item.cid)}>Delete</button>
+                  <button onClick={() => handleDeleteCid(item.cid)}>Delete</button> {/* Added this delete button */}
                 </td>
               </tr>
             ))
@@ -109,4 +113,3 @@ function App() {
 }
 
 export default App;
-
