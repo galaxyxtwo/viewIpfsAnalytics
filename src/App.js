@@ -10,17 +10,17 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/analytics', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            cids: cids,
-            page: 1,
-            size: 44
-          })
-        });
+        const response = await fetch('https://api.leto.gg/analytics', { // Use the absolute URL
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          cids: cids,
+          page: 1,
+          size: 44
+        })
+      });      
 
         if (!response.ok) {
           throw new Error("Network response was not ok");
