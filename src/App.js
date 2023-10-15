@@ -18,7 +18,7 @@ function App() {
           body: JSON.stringify({
             cids: cids,
             page: 1,
-            size: 5
+            size: 44
           })
         });
 
@@ -40,7 +40,7 @@ function App() {
     };
 
     fetchData();
-  }, [cids]);  // 3. Listen to the change of the cids state
+  }, [cids]);  // Listen to the change of the cids state
 
   const handleAddCid = () => {
     if (cidInput) {
@@ -51,6 +51,14 @@ function App() {
       });
       setCidInput('');
     }
+    };
+    console.log("cid added", handleAddCid);  // Log the API response
+const handleDeleteCid = (cidToDelete) => {
+  setCids(prevCids => {
+    const newCids = prevCids.filter(cid => cid !== cidToDelete);
+    localStorage.setItem('savedCids', JSON.stringify(newCids));  // Update local storage
+    return newCids;
+  });
 };
 
 // Add navbar text <span> if needed
@@ -62,7 +70,7 @@ function App() {
       <h1>View IPFS Analytics</h1>
       <h2>Total views per IPFS cid</h2>
 
-      <div className="cid-input-section">  {/* 2. Add a text input and a button */}
+      <div className="cid-input-section">  {/* Add a text input and a button */}
         <input 
           type="text" 
           value={cidInput} 
@@ -77,6 +85,7 @@ function App() {
           <tr>
             <th>IPFS CID</th>
             <th>Total Views</th>
+            <th>Action</th> {/* Added this column header */}
           </tr>
         </thead>
         <tbody>
@@ -90,6 +99,9 @@ function App() {
                   </a>
                 </td>
                 <td>{item.numbersAccessed}</td>
+                <td>
+                  <button onClick={() => handleDeleteCid(item.cid)}>Delete</button> {/* Added this delete button */}
+                </td>
               </tr>
             ))
           }
