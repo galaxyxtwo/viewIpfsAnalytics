@@ -8,7 +8,8 @@ viewIpfsAnalytics is for communities who use [Leto Analytics](https://leto.gg/) 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-<img width="1284" alt="Screenshot 2023-10-16 at 6 37 47 PM" src="https://github.com/galaxyxtwo/viewIpfsAnalytics/assets/90220293/e5d6ffed-077d-4665-bed8-3274f91351a3">
+<img width="1284" alt="Screenshot 2023-10-16 at 6 51 00 PM" src="https://github.com/galaxyxtwo/viewIpfsAnalytics/assets/90220293/6ebe5efc-8410-4de9-9e24-ee056abf20ad">
+
 
 ## Getting Started
 Follow the steps below to set up and run the viewIpfsAnalytics React App in a local development environment. 
