@@ -1,62 +1,51 @@
-addEventListener("fetch", (event) => {
+addEventListener('fetch', (event) => {
     event.respondWith(handleRequest(event.request));
   });
   
   async function handleRequest(request) {
+    // Define the URL of your API server
+    const apiServerURL = 'https://api.leto.gg/analytics';
+  
     // Handle CORS preflight requests
-    if (request.method === "OPTIONS") {
+    if (request.method === 'OPTIONS') {
       return new Response(null, {
+        status: 204, // No Content
         headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "POST",
-          "Access-Control-Allow-Headers": "Content-Type",
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
+          'Access-Control-Max-Age': '86400', // 24 hours cache
         },
       });
     }
   
-    // Handle ping request
-    if (request.url.endsWith("/ping")) {
-      return new Response("Pong", { status: 200 });
-    }
+    // Forward the request to the API server
+    const apiResponse = await fetch(apiServerURL, {
+      method: request.method,
+      headers: request.headers,
+      body: request.method !== 'GET' ? request.body : undefined,
+    });
   
-    // Handle data request
-    if (request.url.endsWith("/analytics")) {
-      // Validate CID presence here
-  
-      // Make a request to the original API
-      const apiResponse = await fetch('https://api.leto.gg/analytics', {
-        method: 'POST', // Adjust the method as needed
-        headers: {
-          'Content-Type': 'application/json',
-          // Add any other headers needed for the original API
-        },
-        body: JSON.stringify({
-          // Add request data if required
-        }),
+    // Check if the API response is OK
+    if (!apiResponse.ok) {
+      return new Response('API server error', {
+        status: apiResponse.status,
+        statusText: apiResponse.statusText,
       });
-  
-      // Check if the response from the original API is OK
-      if (apiResponse.ok) {
-        // Process the response, if needed
-        const responseData = await apiResponse.json();
-  
-        // Modify the response data or headers as required
-        const modifiedResponseData = responseData; // Modify this as needed
-  
-        // Return the modified response
-        return new Response(JSON.stringify(modifiedResponseData), {
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*", // CORS headers
-          },
-        });
-      } else {
-        // Handle API error response, if needed
-        return new Response("Error from original API", { status: apiResponse.status });
-      }
     }
   
-    // Handle other requests here
+    // Modify the API response as needed
+    const modifiedResponse = new Response(apiResponse.body, {
+      status: apiResponse.status,
+      statusText: apiResponse.statusText,
+      headers: {
+        'Content-Type': apiResponse.headers.get('Content-Type'),
+        // Add any other headers if necessary
+      },
+    });
   
-    return new Response("Not Found", { status: 404 });
+    // Set CORS headers to allow requests from your React app's origin
+    modifiedResponse.headers.set('Access-Control-Allow-Origin', '*');
+  
+    return modifiedResponse;
   }
