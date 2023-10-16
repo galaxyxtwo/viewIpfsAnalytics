@@ -1,43 +1,45 @@
-## viewIpfsAnalytics
+# viewIpfsAnalytics
 
-An interface to display analytics for IPFS content by querying the [Leto Analytics api](https://letodev.gitbook.io/getting-started/documentation/analytics-rest-api). No login required.
+Located here: https://bafybeifvibof4xsvmovjb2jidkpzy2molzvcvjehmjzuweu3jssyxuezqy.ipfs.sphn.link/
 
-This is a public facing tool for communities using [Leto Analytics](https://leto.gg/) (on websites, apps, NFTs, and more). If Leto is used in your system, analytics for each CID can be accessed with this application. End-users have the opportunity to view the analytics for their IPFS content!
+Display analytics for IPFS content by querying the [Leto Analytics api](https://letodev.gitbook.io/getting-started/documentation/analytics-rest-api). No login required.
 
-<img width="1215" alt="Screenshot 2023-10-13 at 7 27 36 PM" src="https://github.com/galaxyxtwo/viewIpfsAnalytics/assets/90220293/7d256442-d07c-4086-a78b-d4a79c149b9e">
+viewIpfsAnalytics is for communities who use [Leto Analytics](https://leto.gg/) to server content to end users. This tool gives end users the opportunity to view the analytics for their IPFS content!
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+<img width="1284" alt="Screenshot 2023-10-16 at 6 37 47 PM" src="https://github.com/galaxyxtwo/viewIpfsAnalytics/assets/90220293/e5d6ffed-077d-4665-bed8-3274f91351a3">
+
+## Getting Started
+Follow the steps below to set up and run the viewIpfsAnalytics React App in a local development environment. 
+
+1. **Clone the Repository**:
+  
+    ```
+    git clone [https://github.com/galaxyxtwo/viewIpfsAnalytics]
+    cd [viewIpfsAnalytics]
+    ```
+2. **Run the Development Server**:
+     ```
+    npm install
+    npm start
+    ```
+3. **Add your IPFS CIDs**:
+Copy and paste your CIDs into the box to create a list! When running viewIpfsAnalytics, the inputs (cids) and associated analytics data are saved in local storage.
+
+> **_Keep in mind_**: Only IPFS CIDs that have been accessed through the [Leto IPFS Gateway](https://letodev.gitbook.io/getting-started/documentation/ipfs-gateway-api) will return analytics data.
+   
+## Note
+To run this application in the cloud, choose a hosting provider and then use a cloudflare worker for the api request. /worker is Javascript code meant for a Cloudflare worker that processes api requests. /src is the front-end built with React.
+
+We launched a [viewIpfsAnalytics](https://bafybeifvibof4xsvmovjb2jidkpzy2molzvcvjehmjzuweu3jssyxuezqy.ipfs.sphn.link/) web-app for the community to use! Feel free to use this repo to launch your own viewIpfsAnalytics web-app.
 
 ## Background on viewIpfsAnalytics and Leto Analytics
 
 This tool uses the [Leto Analytics api](https://letodev.gitbook.io/getting-started/documentation/analytics-rest-api) to retrieve and display anonymous, aggregate analytics for a given IPFS CID. When a developer serves IPFS content with the [Leto IPFS gateway](https://letodev.gitbook.io/getting-started/documentation/ipfs-gateway-api), the analytics collected is publicly avaliable via the the Analytics api.
-
-This provides developers and communities the data they need while holding the mechanism accountable. Anyone can see the analytics their provider/website is collecting. 
 
 We hope you find viewIpfsAnalytics useful! For larger scale businesses in need of more functionality, login to the [Leto dashboard](https://leto.gg/) for free and upgrade your service with a [pro plan](https://leto.gg/#about) when needed. 
 
 Learn more by visiting the [Leto docs](https://letodev.gitbook.io/getting-started/) or [Blog](https://blog.leto.gg/).
 
 > **_Note_**: In the future Leto will give developers a choice to opt in or out of this public dataset for privacy reasons. It will be up to each dev to commuinicate this with end users.
-
-## Getting Started
-Follow the steps below to set up and run the viewIpfsAnalytics React App. Run the app locally or host in the cloud for your community!
-
-1. **Clone the Repository**:
-  
-    ```
-    git clone [https://github.com/galaxyxtwo/cidLeaderboard]
-    cd [cid-leaderboard]
-    ```
-2. **Run the Development Server**:
-    ```
-    npm install
-    npm start
-    ```
-
-  The react app should now be running in development mode. View the website in the browser at your local server address.
-
-
-## Add your IPFS CIDs
-Copy and paste your CIDs into the box to create a list! When running viewIpfsAnalytics, the inputs (cids) and associated analytics data are saved in local storage.
-
-  
-> **_Keep in mind_**: Only IPFS CIDs that have been accessed through the [Leto IPFS Gateway](https://letodev.gitbook.io/getting-started/documentation/ipfs-gateway-api) will return analytics data.
