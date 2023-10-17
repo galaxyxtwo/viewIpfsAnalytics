@@ -37,9 +37,9 @@ We launched a [viewIpfsAnalytics](https://bafybeifvibof4xsvmovjb2jidkpzy2molzvcv
 
 ## Background on viewIpfsAnalytics and Leto Analytics
 
-This tool uses the [Leto Analytics api](https://letodev.gitbook.io/getting-started/documentation/analytics-rest-api) to retrieve and display anonymous, aggregate analytics for a given IPFS CID. When a developer serves IPFS content with the [Leto IPFS gateway](https://letodev.gitbook.io/getting-started/documentation/ipfs-gateway-api), the analytics collected is publicly avaliable via the the Analytics api.
+This tool uses the [Leto Analytics api](https://letodev.gitbook.io/getting-started/documentation/analytics-rest-api) to retrieve and display anonymous, aggregate analytics for a given IPFS CID. When a developer serves IPFS content with the [Leto IPFS gateway](https://letodev.gitbook.io/getting-started/documentation/ipfs-gateway-api), the analytics collected is publicly avaliable via the Analytics api.
 
-We hope you find viewIpfsAnalytics useful! For larger scale businesses in need of more functionality, login to the [Leto dashboard](https://leto.gg/) for free and upgrade your service with a [pro plan](https://leto.gg/#about) when needed. 
+We hope you find viewIpfsAnalytics useful! For larger scale businesses in need of more functionality, login to the [Leto dashboard](https://leto.gg/) for free and upgrade your service to a [pro plan](https://leto.gg/#about) when needed. 
 
 Learn more by visiting the [Leto docs](https://letodev.gitbook.io/getting-started/) or [Blog](https://blog.leto.gg/).
 
