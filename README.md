@@ -4,7 +4,7 @@ Located here: https://bafybeifvibof4xsvmovjb2jidkpzy2molzvcvjehmjzuweu3jssyxuezq
 
 Display analytics for IPFS content by querying the [Leto Analytics api](https://letodev.gitbook.io/getting-started/documentation/analytics-rest-api). No login required.
 
-This tool gives end users the opportunity to view the analytics for their IPFS content! Look up any CID that is served using [Leto Analytics](https://leto.gg/).
+This tool gives end users the opportunity to view the analytics for their IPFS content! Lookup any CID that is served using [Leto Analytics](https://leto.gg/).
 
 <img width="1284" alt="Screenshot 2023-10-16 at 6 51 00 PM" src="https://github.com/galaxyxtwo/viewIpfsAnalytics/assets/90220293/6ebe5efc-8410-4de9-9e24-ee056abf20ad">
 
