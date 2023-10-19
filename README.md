@@ -34,7 +34,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Note
 To run this application in the cloud, choose a hosting provider and then use a cloudflare worker for the api request. /worker is Javascript code meant for a Cloudflare worker that processes api requests. /src is the front-end built with React.
 
-We launched a [viewIpfsAnalytics](https://bafybeifvibof4xsvmovjb2jidkpzy2molzvcvjehmjzuweu3jssyxuezqy.ipfs.sphn.link/) web-app for the community to use! If you want to host this yoourself, feel free to use this repo to launch your own viewIpfsAnalytics web-app.
+We launched a [viewIpfsAnalytics](https://bafybeifvibof4xsvmovjb2jidkpzy2molzvcvjehmjzuweu3jssyxuezqy.ipfs.sphn.link/) web-app for the community to use! If you want to host this yourself, feel free to use this repo to launch your own viewIpfsAnalytics web-app.
 
 ## Background on viewIpfsAnalytics and Leto Analytics
 
