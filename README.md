@@ -6,8 +6,6 @@ Display analytics for IPFS content by querying the [Leto Analytics api](https://
 
 This tool gives end users the opportunity to view the analytics for their IPFS content! Look up any CID that is served using [Leto Analytics](https://leto.gg/).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 <img width="1284" alt="Screenshot 2023-10-16 at 6 51 00 PM" src="https://github.com/galaxyxtwo/viewIpfsAnalytics/assets/90220293/6ebe5efc-8410-4de9-9e24-ee056abf20ad">
 
 
@@ -29,6 +27,9 @@ Follow the steps below to set up and run the viewIpfsAnalytics React App in a lo
 Copy and paste your CIDs into the box to create a list! When running viewIpfsAnalytics, the inputs (cids) and associated analytics data are saved in local storage.
 
 > **_Keep in mind_**: Only IPFS CIDs that have been accessed through the [Leto IPFS Gateway](https://letodev.gitbook.io/getting-started/documentation/ipfs-gateway-api) will return analytics data.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
    
 ## Note
 To run this application in the cloud, choose a hosting provider and then use a cloudflare worker for the api request. /worker is Javascript code meant for a Cloudflare worker that processes api requests. /src is the front-end built with React.
